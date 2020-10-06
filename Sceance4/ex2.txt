@@ -1,0 +1,40 @@
+invariant I de
+
+int i, fact;
+for (i = 2, fact = 1; i <= n; i++)
+    fact *= i;
+
+est {2 <= i <= n+1 et fact = Π_(2<=j<i) j }
+
+Est-ce que ?
+{2 <= i <= n+1 et fact = Π(2<=j<i)}
+for (i = 2, fact = 1; i <= n; i++)
+    fact *= i;
+{2 <= i <= n+1 et fact = Π(2<=j<i)}
+
+reecriture
+
+{I , i = 2, fact = 1}
+while(i <= n){
+    fact *= i;
+    i++;
+}
+{I}
+
+Preuve pour une iteration
+1.  {I, i > n}
+    if(i<=n){
+        fact *= i;
+        i++;
+    }
+    {I}
+    est trivialement vrai car se simplifie à {I, i > n} ; {I}
+2.  {I, i <= n}
+    fact *= i; i++;
+    {I}
+    est vrai car,
+    a. i' = i+1 et i <= n => i' <= n+1
+    b. fact' = fact*i et fact = Π_(2<=j<i) j => fact' = Π_(2<=j<i') j
+Donc I est bien un invariant
+
+le variant v = n+1-i suffit.

@@ -1,0 +1,38 @@
+Ex 1 Serie 2
+
+Il faut prouver que
+
+{0<n<3}
+;
+{F_n == 1} qui est vrai
+et 
+
+{n >= 3, fib = {1,1}}
+for(int i=2;i<n;++i){
+    fib[i%2] = fib[0]+fib[1];
+}
+printf("F%d = %d", n, fib[(n-1)%2]);
+
+{fib[(n-1)%2] = F_n}
+
+reecriture
+
+{n >= 3, fib = {1,1}, i = 2} = P
+while(i < n){
+    fib[i%2] = fib[0]+fib[1];
+    ++i;
+}
+{fib[(n-1)%2] = F_n} = Q
+
+Invariant de boucle I {i < n+1, fib contient les F_i-1 et F_i si i est impair ou fib contient les F_i et F_i-1 si i est pair}
+On a bien P => I
+et on a bien I => Q car n-1 est le dernier indice i visiter dans la boucle
+
+On doit prouver que I est bien un invariant {I} if(i < n) {fib[i%2] = fib[0]+fib[1]; ++i} {I}
+Si i >= n: {I, i >= n} ; {I}, alors I est vrai
+Si i < n : {I, i<n} fib[i%2] = fib[0]+fib[1]; ++i {I} est vrai, car l'indice i%2 est l'indice de F_i-1 et on remplace cette valeur par F_i+1
+    et i' = i+1 < n+1
+
+Finalement l invariant v = n-i suffit
+
+Complexité O(n), memoire utilisé O(1)

@@ -1,0 +1,5 @@
+1.  x = 1   y = -1  z = -1 //car x++ est 0 et --y est -1
+2.  x = 1   y = 0   z = -2 //car x++ && y++ => 0 && 0 => F
+3.  x = 1   y = 1   z = 1
+4.  x = 1   y = 1   z = 1 //car x>0 || !++y => faux
+5.  x = 1   y = 0   z = 0  

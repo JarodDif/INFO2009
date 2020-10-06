@@ -1,0 +1,5 @@
+1. 1
+2. 0, car si x avant = 2^31-1, Q est faux
+3. 0
+4. 1, car P est 0
+5. 1
